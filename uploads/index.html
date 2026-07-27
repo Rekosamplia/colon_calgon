@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="icon" type="image/png" href="uploads/logoColon.png">
+<link rel="stylesheet" href="_ds/samplia-design-system-3b8c391a-4304-4ac7-a11b-0dd4cb4af9a4/colors_and_type.css">
+<style>
+  @font-face { font-family: 'Barlow'; src: url('uploads/Barlow-Regular.otf') format('opentype'); font-weight: 400; font-display: swap; }
+  @font-face { font-family: 'Barlow'; src: url('uploads/Barlow-SemiBold.otf') format('opentype'); font-weight: 600; font-display: swap; }
+  @font-face { font-family: 'Barlow'; src: url('uploads/Barlow-Extra Bold.ttf') format('truetype'); font-weight: 800; font-display: swap; }
+  @font-face { font-family: 'Brandon Grotesque'; src: url('uploads/Brandon_blk.otf') format('opentype'); font-weight: 900; font-display: swap; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Barlow', sans-serif; -webkit-font-smoothing: antialiased; background: #020f30; }
+  a { color: #cfe0ff; text-decoration: none; }
+  a:hover { color: #ffffff; }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+  .lc-desk-br { display: none; }
+  .lc-icon { -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; }
+  /* ---- Desktop enhancements ---- */
+  @media (min-width: 860px) {
+    #lc-hero-inner { padding-top: 44px !important; }
+    #colon-logo { position: absolute !important; top: 24px !important; left: 28px !important; width: 230px !important; margin: 0 !important; z-index: 4; }
+    #lc-titular { padding-top: 6px !important; }
+    #lc-hero-row { flex-direction: row !important; gap: 30px !important; }
+    #lc-hero-claim { text-align: center !important; }
+    .lc-mob-br { display: none !important; }
+    .lc-desk-br { display: inline !important; }
+    #lc-hero-right { align-items: center !important; text-align: center !important; }
+    #lc-steps, .lc-steps-sec { flex-direction: row !important; align-items: stretch !important; padding: 34px 20px !important; }
+    #lc-steps-inner, .lc-steps-inner { flex-direction: row !important; align-items: stretch !important; width: 100% !important; }
+    #lc-productos-grid { grid-template-columns: repeat(8, 1fr) !important; gap: 22px 18px !important; }
+    #lc-productos-grid > * { grid-column: span 2; }
+    #lc-productos-grid > *:nth-child(9) { grid-column: 2 / span 2; }
+    .lc-step { flex: 1 1 0 !important; flex-direction: column !important; text-align: center !important; align-items: center !important; gap: 12px !important; padding: 4px 26px !important; }
+    .lc-step + .lc-step { border-left: 1px solid rgba(255,255,255,0.14) !important; }
+    .lc-step-txt { text-align: center !important; }
+    #lc-footer-inner { max-width: 760px !important; }
+    #lc-cta-btn { width: auto !important; min-width: 320px; }
+  }
+</style>
+</helmet>
+<div style="min-height:100vh; position:relative; overflow-x:hidden; color:#fff; background:linear-gradient(180deg, #05163a 0%, #04123180 34%, #020e28 100%);">
+
+  <!-- ============ HERO ============ -->
+  <section id="lc-hero" style="position:relative; background:linear-gradient(to bottom, rgba(5,22,58,0) 56%, #05163a 100%), url('uploads/bg.jpg') center top / cover no-repeat;">
+    <div id="lc-hero-inner" style="max-width:1180px; margin:0 auto; padding:26px 20px 26px; position:relative; text-align:center;">
+      <img id="colon-logo" src="uploads/logoColon.png" alt="Colon" style="width:160px; height:auto; display:block; margin:0 auto -14px; position:relative; z-index:3; filter:drop-shadow(0 6px 16px rgba(0,0,0,0.4));">
+
+      <div id="lc-titular" style="position:relative; z-index:2;">
+        <img src="uploads/titular.png" alt="La limpieza de toda la vida. Ahora cuesta menos" style="width:100%; max-width:640px; height:auto; display:block; margin:0 auto;">
+      </div>
+
+      <div id="lc-hero-row" style="display:flex; flex-direction:column; align-items:center; gap:18px; margin:18px auto 6px; max-width:1080px;">
+        <div id="lc-hero-claim" style="flex:1; font-weight:800; font-size:clamp(18px,4.8vw,26px); line-height:1.25; text-align:center; text-shadow:0 2px 8px rgba(0,0,0,0.4);">Consigue<br class="lc-mob-br"> hasta <br class="lc-desk-br"><span style="color:#E30613; -webkit-text-stroke:4px #FFFFFF; paint-order:stroke fill; text-shadow:none; font-size:2.4em; line-height:1; display:inline-block; vertical-align:-0.12em;">4€</span> de regalo</div>
+        <div id="lc-hero-slider" style="flex:none; position:relative; width:min(70vw,340px); height:min(92vw,440px);">
+          <div style="position:absolute; inset:0; overflow:hidden;">
+            <sc-for list="{{ prodSlides }}" as="p" hint-placeholder-count="0">
+              <div role="img" aria-label="{{ p.name }}" style="position:absolute; inset:0; background:center / contain no-repeat; background-image:url('{{ p.img }}'); opacity:{{ p.op }}; transform:translateX({{ p.tx }}); transition:opacity .55s cubic-bezier(0.22,1,0.36,1), transform .55s cubic-bezier(0.22,1,0.36,1); filter:drop-shadow(0 22px 40px rgba(0,0,0,0.45));"></div>
+            </sc-for>
+          </div>
+          <button type="button" aria-label="Anterior" onClick="{{ prevSlide }}" style="position:absolute; top:50%; left:-18px; transform:translateY(-50%); width:44px; height:44px; border-radius:999px; border:none; cursor:pointer; background:rgba(255,255,255,0.16); backdrop-filter:blur(6px); color:#fff; font-size:22px; font-weight:800; line-height:1; display:flex; align-items:center; justify-content:center; z-index:2;" style-hover="background:rgba(255,255,255,0.3);">❮</button>
+          <button type="button" aria-label="Siguiente" onClick="{{ nextSlide }}" style="position:absolute; top:50%; right:-18px; transform:translateY(-50%); width:44px; height:44px; border-radius:999px; border:none; cursor:pointer; background:rgba(255,255,255,0.16); backdrop-filter:blur(6px); color:#fff; font-size:22px; font-weight:800; line-height:1; display:flex; align-items:center; justify-content:center; z-index:2;" style-hover="background:rgba(255,255,255,0.3);">❯</button>
+        </div>
+        <div id="lc-hero-right" style="flex:1; display:flex; flex-direction:column; align-items:center; gap:14px; text-align:center;">
+          <div style="font-weight:800; font-size:clamp(18px,4.8vw,26px); line-height:1.25; text-shadow:0 2px 8px rgba(0,0,0,0.4);">Más de 10 productos participantes</div>
+          <button type="button" onClick="{{ onVerProductos }}" style="border:none; cursor:pointer; background:rgba(255,255,255,0.14); border:1.5px solid rgba(255,255,255,0.65); color:#fff; font-family:'Barlow',sans-serif; font-weight:600; font-size:16px; padding:12px 26px; border-radius:999px; backdrop-filter:blur(6px); transition:background 220ms;" style-hover="background:rgba(255,255,255,0.28);">Descubre todos los productos</button>
+        </div>
+      </div>
+
+      <div style="font-weight:800; font-size:clamp(24px,7.6vw,50px); line-height:1.05; text-shadow:0 2px 10px rgba(0,0,0,0.4); margin:36px auto 8px;">
+        Recibe tu dinero <br class="lc-mob-br">en solo <span style="color:#fff; font-size:1.28em; text-shadow:0 2px 10px rgba(0,0,0,0.4);">3</span> pasos
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STEPS ============ -->
+  <section id="lc-steps" style="max-width:1180px; margin:28px auto 8px; padding:52px 20px; display:flex; flex-direction:column; gap:20px; background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.08); border-radius:20px;">
+    <div id="lc-steps-inner" style="display:flex; flex-direction:column; gap:68px; width:fit-content; max-width:100%; margin:0 auto;">
+    <div class="lc-step" style="display:flex; align-items:center; gap:16px;">
+      <div style="flex:none; width:46px; height:46px; border-radius:999px; background:#E30613; color:#fff; font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(227,6,19,0.4);">1</div>
+      <img src="assets/step-1.svg" alt="" style="flex:none; display:block; width:58px; height:58px;">
+      <div class="lc-step-txt" style="text-align:left;">
+        <div style="font-weight:800; font-size:23px; text-transform:uppercase; letter-spacing:0.02em; line-height:1.05;">Compra</div>
+        <div style="font-weight:400; font-size:16px; color:#cfe0ff; line-height:1.3; margin-top:3px;">Productos seleccionados Colon</div>
+      </div>
+    </div>
+    <div class="lc-step" style="display:flex; align-items:center; gap:16px;">
+      <div style="flex:none; width:46px; height:46px; border-radius:999px; background:#E30613; color:#fff; font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(227,6,19,0.4);">2</div>
+      <img src="assets/step-2.svg" alt="" style="flex:none; display:block; width:58px; height:58px;">
+      <div class="lc-step-txt" style="text-align:left;">
+        <div style="font-weight:800; font-size:23px; text-transform:uppercase; letter-spacing:0.02em; line-height:1.05;">Sube</div>
+        <div style="font-weight:400; font-size:16px; color:#cfe0ff; line-height:1.3; margin-top:3px;">Tu ticket y tus datos a través del formulario</div>
+      </div>
+    </div>
+    <div class="lc-step" style="display:flex; align-items:center; gap:16px;">
+      <div style="flex:none; width:46px; height:46px; border-radius:999px; background:#E30613; color:#fff; font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(227,6,19,0.4);">3</div>
+      <img src="assets/step-3.svg" alt="" style="flex:none; display:block; width:58px; height:58px;">
+      <div class="lc-step-txt" style="text-align:left;">
+        <div style="font-weight:800; font-size:23px; text-transform:uppercase; letter-spacing:0.02em; line-height:1.05;">Recibe tu dinero</div>
+        <div style="font-weight:400; font-size:16px; color:#cfe0ff; line-height:1.3; margin-top:3px;">Directamente en tu cuenta</div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ PRODUCTOS ============ -->
+  <section id="lc-productos" style="max-width:1180px; margin:72px auto 8px; padding:10px 20px; text-align:center;">
+    <h2 style="font-weight:800; font-size:clamp(19px,5.2vw,34px); line-height:1.15; margin:0 auto 72px; text-shadow:0 2px 10px rgba(0,0,0,0.4);">Busca el tuyo y recibe <br class="lc-mob-br">hasta <span style="color:#E30613; -webkit-text-stroke:4px #FFFFFF; paint-order:stroke fill; text-shadow:none;">4€</span> de regalo</h2>
+    <div id="lc-productos-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px 14px; align-items:end;">
+      <sc-for list="{{ productos }}" as="p" hint-placeholder-count="10">
+        <img src="{{ p.img }}" alt="{{ p.name }}" style="width:100%; height:auto; display:block; filter:drop-shadow(0 16px 28px rgba(0,0,0,0.45));">
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ============ TITULAR PASOS 2 ============ -->
+  <div style="font-weight:800; font-size:clamp(24px,7.6vw,50px); line-height:1.05; text-align:center; text-shadow:0 2px 10px rgba(0,0,0,0.4); margin:72px auto 8px; padding:0 20px;">
+    Recibe tu dinero <br class="lc-mob-br">en solo <span style="color:#fff; font-size:1.28em; text-shadow:0 2px 10px rgba(0,0,0,0.4);">3</span> pasos
+  </div>
+
+  <!-- ============ STEPS 2 ============ -->
+  <section class="lc-steps-sec" style="max-width:1180px; margin:36px auto 8px; padding:52px 20px; display:flex; flex-direction:column; gap:20px; background:rgba(255,255,255,0.045); border:1px solid rgba(255,255,255,0.08); border-radius:20px;">
+    <div class="lc-steps-inner" style="display:flex; flex-direction:column; gap:68px; width:fit-content; max-width:100%; margin:0 auto;">
+    <div class="lc-step" style="display:flex; align-items:center; gap:16px;">
+      <div style="flex:none; width:46px; height:46px; border-radius:999px; background:#E30613; color:#fff; font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(227,6,19,0.4);">1</div>
+      <img src="assets/step-1.svg" alt="" style="flex:none; display:block; width:58px; height:58px;">
+      <div class="lc-step-txt" style="text-align:left;">
+        <div style="font-weight:800; font-size:23px; text-transform:uppercase; letter-spacing:0.02em; line-height:1.05;">Compra</div>
+        <div style="font-weight:400; font-size:16px; color:#cfe0ff; line-height:1.3; margin-top:3px;">Productos seleccionados Colon</div>
+      </div>
+    </div>
+    <div class="lc-step" style="display:flex; align-items:center; gap:16px;">
+      <div style="flex:none; width:46px; height:46px; border-radius:999px; background:#E30613; color:#fff; font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(227,6,19,0.4);">2</div>
+      <img src="assets/step-2.svg" alt="" style="flex:none; display:block; width:58px; height:58px;">
+      <div class="lc-step-txt" style="text-align:left;">
+        <div style="font-weight:800; font-size:23px; text-transform:uppercase; letter-spacing:0.02em; line-height:1.05;">Sube</div>
+        <div style="font-weight:400; font-size:16px; color:#cfe0ff; line-height:1.3; margin-top:3px;">Tu ticket y tus datos a través del formulario</div>
+      </div>
+    </div>
+    <div class="lc-step" style="display:flex; align-items:center; gap:16px;">
+      <div style="flex:none; width:46px; height:46px; border-radius:999px; background:#E30613; color:#fff; font-weight:800; font-size:23px; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(227,6,19,0.4);">3</div>
+      <img src="assets/step-3.svg" alt="" style="flex:none; display:block; width:58px; height:58px;">
+      <div class="lc-step-txt" style="text-align:left;">
+        <div style="font-weight:800; font-size:23px; text-transform:uppercase; letter-spacing:0.02em; line-height:1.05;">Recibe tu dinero</div>
+        <div style="font-weight:400; font-size:16px; color:#cfe0ff; line-height:1.3; margin-top:3px;">Directamente en tu cuenta</div>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer id="lc-footer" style="margin-top:72px; background:#041634; border-top:1px solid rgba(255,255,255,0.08);">
+    <div id="lc-footer-inner" style="max-width:1180px; margin:0 auto; padding:24px 20px calc(130px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; gap:16px;">
+      <img src="uploads/logo_samplia_footer.png" alt="Samplia" style="height:34px; width:auto; display:block;">
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px 22px; font-weight:600; font-size:14px;">
+        <a href="#">Bases legales</a>
+        <a href="https://www.airwickcashback.com/privacidad.pdf" target="_blank" rel="noopener">Política de privacidad</a>
+      </div>
+      <div style="font-weight:400; font-size:12px; color:#8ea6cc; text-align:center;">© 2026 Samplia · Promoción sujeta a bases legales.</div>
+    </div>
+  </footer>
+
+  <!-- ============ STICKY CTA ============ -->
+  <div id="lc-cta" style="position:fixed; left:0; right:0; bottom:0; z-index:50; padding:14px 20px calc(14px + env(safe-area-inset-bottom)); display:flex; justify-content:center; background:transparent; pointer-events:none;">
+    <button id="lc-cta-btn" type="button" onClick="{{ onSubir }}" style="pointer-events:auto; width:100%; max-width:440px; border:none; cursor:pointer; background:#E30613; color:#fff; font-family:'Barlow',sans-serif; font-weight:800; font-size:22px; letter-spacing:0.01em; padding:16px 40px; border-radius:999px; box-shadow:0 6px 18px rgba(0,0,0,0.35); transition:transform 120ms, background 220ms;" style-hover="background:#C90511;" style-active="transform:scale(0.97);">Sube tu Ticket</button>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  productos = [
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-ACTIVO-34D_8410104032722_01.png', name: 'Colon Gel Activo 34D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-ACTIVO-45D_8410104032739_01.png', name: 'Colon Gel Activo 45D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-ACTIVO-74D_8410104032906_01.png', name: 'Colon Gel Activo 74D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-ACTIVO-100D_8410104911072_01.png', name: 'Colon Gel Activo 100D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-NENUCO-34D_8410104032661_01.png', name: 'Colon Nenuco 34D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-NENUCO-45D_8410104899288_01.png', name: 'Colon Nenuco 45D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-NENUCO-60D_8410104032463_01.png', name: 'Colon Nenuco 60D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-SENSACIONES-45D_8410104911058_01.png', name: 'Colon Flor 45D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-SENSACIONES-74D_8410104911041_01.png', name: 'Colon Flor 74D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-VANISH-40D_8410104032814_01.png', name: 'Colon Vanish 40D' },
+    { img: 'uploads/P-29907_Colon_CASHBACK_GEL-VANISH-64D_8410104890094_01.png', name: 'Colon Vanish 64D' },
+  ];
+  state = { slide: 0 };
+  componentDidMount() { this._startAuto(); }
+  componentWillUnmount() { clearInterval(this._t); }
+  _startAuto() {
+    clearInterval(this._t);
+    this._t = setInterval(() => this._go(this.state.slide + 1), 3000);
+  }
+  _go(i) {
+    const n = this.productos.length;
+    this.setState({ slide: ((i % n) + n) % n });
+  }
+  renderVals() {
+    return {
+      productos: this.productos,
+      prodSlides: this.productos.map((p, i) => {
+        const s = this.state.slide, n = this.productos.length;
+        const isPrev = i === ((s - 1 + n) % n), isCur = i === s;
+        return { ...p, op: isCur ? 1 : 0, tx: isCur ? '0%' : (isPrev ? '-60%' : '60%') };
+      }),
+      prevSlide: () => { this._go(this.state.slide - 1); this._startAuto(); },
+      nextSlide: () => { this._go(this.state.slide + 1); this._startAuto(); },
+      onVerProductos: () => {
+        const el = document.getElementById('lc-productos');
+        if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 16, behavior: 'smooth' });
+      },
+      onSubir: () => { window.open('https://participa.samplia.com/lacoladaconcashback', '_blank', 'noopener'); },
+    };
+  }
+}
+</script>
+</body>
+</html>

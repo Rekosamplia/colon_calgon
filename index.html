@@ -98,33 +98,15 @@
 
   <!-- ============ STICKY CTA ============ -->
   <div style="position:fixed; left:0; right:0; bottom:0; z-index:50; padding:14px 20px calc(14px + env(safe-area-inset-bottom)); display:flex; justify-content:center; background:transparent; pointer-events:none;">
-    <sc-if value="{{ ctaActivo }}" hint-placeholder-val="{{ true }}">
-      <a id="cc-cta-btn" href="{{ ctaUrl }}" target="_blank" rel="noopener" style="pointer-events:auto; display:block; text-align:center; text-decoration:none; width:100%; max-width:440px; border:none; cursor:pointer; background:#E1251B; color:#fff; font-family:'Barlow',sans-serif; font-weight:800; font-size:22px; letter-spacing:0.01em; padding:16px 40px; border-radius:999px; box-shadow:0 6px 18px rgba(0,0,0,0.35); transition:transform 120ms, background 220ms;" style-hover="background:#C21A11; color:#fff;" style-active="transform:scale(0.97);">Sube tu Ticket</a>
-    </sc-if>
-    <sc-if value="{{ ctaPendiente }}" hint-placeholder-val="{{ false }}">
-      <div id="cc-cta-btn" style="pointer-events:auto; text-align:center; width:100%; max-width:440px; background:#E1251B; color:#fff; font-family:'Barlow',sans-serif; font-weight:800; font-size:20px; letter-spacing:0.01em; padding:16px 32px; border-radius:999px; box-shadow:0 6px 18px rgba(0,0,0,0.35); cursor:default;">Disponible a partir del 15/08</div>
-    </sc-if>
+    <a id="cc-cta-btn" href="{{ ctaUrl }}" target="_blank" rel="noopener" style="pointer-events:auto; display:block; text-align:center; text-decoration:none; width:100%; max-width:440px; border:none; cursor:pointer; background:#E1251B; color:#fff; font-family:'Barlow',sans-serif; font-weight:800; font-size:22px; letter-spacing:0.01em; padding:16px 40px; border-radius:999px; box-shadow:0 6px 18px rgba(0,0,0,0.35); transition:transform 120ms, background 220ms;" style-hover="background:#C21A11; color:#fff;" style-active="transform:scale(0.97);">Sube tu Ticket</a>
   </div>
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;ctaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://participa.samplia.com/lacoladaperfecta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Promoción&quot;},&quot;fechaInicio&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-08-15T00:00:00+02:00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Promoción&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://participa.samplia.com/lacoladaperfecta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Promoción&quot;}}">
 class Component extends DCLogic {
-  state = { now: Date.now() };
-
-  componentDidMount() {
-    // revisa cada minuto para activar el CTA en el momento exacto
-    this._t = setInterval(() => this.setState({ now: Date.now() }), 60000);
-  }
-  componentWillUnmount() { clearInterval(this._t); }
-
   renderVals() {
-    // Activo desde el 15/08 a las 00:00 (hora peninsular, UTC+2 en agosto)
-    const inicio = new Date(this.props.fechaInicio || '2026-08-15T00:00:00+02:00').getTime();
-    const activo = this.state.now >= inicio;
     return {
-      ctaActivo: activo,
-      ctaPendiente: !activo,
       ctaUrl: this.props.ctaUrl || 'https://participa.samplia.com/lacoladaperfecta',
     };
   }

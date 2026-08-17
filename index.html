@@ -21,6 +21,13 @@
   a { color: #9ed6ff; text-decoration: none; }
   a:hover { color: #ffffff; }
   @keyframes coinFloat { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
+  @media (max-width: 640px) {
+    #cc-hero-img { height: clamp(72px, 27vw, 120px); object-fit: cover; object-position: 50% center; }
+  }
+  @media (max-width: 859px) {
+    #cc-promo-title { font-size: clamp(34px, 9.5vw, 52px) !important; }
+    #cc-pasos > h2, #cc-productos > h2 { font-size: clamp(28px, 8vw, 44px) !important; }
+  }
   .cc-mob-br { display: inline; }
   .cc-desk-br { display: none; }
   @media (min-width: 860px) {
@@ -39,8 +46,8 @@
 <div style="min-height:100vh; position:relative; overflow-x:hidden; color:#fff; background:linear-gradient(180deg, #0a5fb4 0%, #073f80 38%, #04234f 100%);">
 
   <!-- ============ HERO ============ -->
-  <section style="position:relative; padding:0 0 8px;">
-    <img src="uploads/banner_colon_calgon-1faabfea.png" alt="Compra 1 detergente Colon y llévate Calgon gratis" style="width:100%; max-width:1180px; height:auto; display:block; margin:0 auto;">
+  <section id="cc-hero" style="position:relative; width:100%; padding:0; margin:0; overflow:hidden;">
+    <img id="cc-hero-img" src="uploads/hero_CalgonColon_V2-233606dd.png" alt="Compra 1 detergente Colon y llévate Calgon gratis" style="width:100%; height:clamp(96px,13vw,170px); object-fit:cover; object-position:center center; display:block;">
   </section>
 
   <!-- ============ GIF LAVADORA ============ -->
@@ -50,7 +57,7 @@
 
   <!-- ============ TEXTO PROMO ============ -->
   <section style="max-width:1180px; margin:24px auto 0; padding:0 24px; text-align:center;">
-    <h2 style="font-weight:800; font-style:italic; text-transform:uppercase; text-align:center; font-size:clamp(30px,7.2vw,64px); line-height:1.02; margin:0 auto 20px; width:100%; max-width:100%; text-wrap:balance;">¡Compra Colon + Calgon y llévate hasta <span style="color:#29ABE2; -webkit-text-stroke:4px #ffffff; paint-order:stroke fill;">8,99&nbsp;€</span> de reembolso!</h2>
+    <h2 id="cc-promo-title" style="font-weight:800; font-style:italic; text-transform:uppercase; text-align:center; font-size:clamp(30px,7.2vw,64px); line-height:1.02; margin:0 auto 20px; width:100%; max-width:100%; text-wrap:balance;">¡Compra Colon + Calgon y llévate hasta <span style="color:#29ABE2; -webkit-text-stroke:4px #ffffff; paint-order:stroke fill;">8,99&nbsp;€</span> de reembolso!</h2>
     <p style="font-weight:400; font-size:clamp(15px,3.8vw,18px); line-height:1.5; color:#cfe6ff; margin:0; text-wrap:pretty;"><strong style="font-weight:800; color:#fff;">Si tu producto Calgon cuesta hasta 8,99 €, recibirás un reembolso del 100% de su importe. Si su precio es superior, obtendrás igualmente un reembolso de hasta 8,99 €.</strong> Para más información, consulta las condiciones de la promoción y las <a href="{{ bbllUrl }}" target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">bases legales</a>.</p>
   </section>
 

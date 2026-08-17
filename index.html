@@ -27,6 +27,7 @@
     .cc-mob-br { display: none; }
     .cc-desk-br { display: inline; }
     #cc-steps-grid { grid-template-columns: repeat(3, 1fr) !important; }
+    #cc-prods-grid { grid-template-columns: repeat(4, 1fr) !important; gap: 18px !important; }
     #cc-mec-band { flex-wrap: nowrap !important; justify-content: center !important; gap: 8px !important; }
     #cc-mec-band > div { flex: 0 1 auto !important; }
     #cc-mec-prod { width: 240px !important; margin: 0 !important; }
@@ -38,8 +39,19 @@
 <div style="min-height:100vh; position:relative; overflow-x:hidden; color:#fff; background:linear-gradient(180deg, #0a5fb4 0%, #073f80 38%, #04234f 100%);">
 
   <!-- ============ HERO ============ -->
-  <section style="position:relative; padding:24px 0 8px;">
-    <img src="uploads/hero_CalgonColon_V2.png" alt="Compra 1 detergente Colon y llévate Calgon gratis" style="width:100%; max-width:1180px; height:auto; display:block; margin:0 auto; border-radius:18px;">
+  <section style="position:relative; padding:0 0 8px;">
+    <img src="uploads/banner_colon_calgon-1faabfea.png" alt="Compra 1 detergente Colon y llévate Calgon gratis" style="width:100%; max-width:1180px; height:auto; display:block; margin:0 auto;">
+  </section>
+
+  <!-- ============ GIF LAVADORA ============ -->
+  <section style="max-width:1180px; margin:0 auto; padding:8px 20px 0; display:flex; justify-content:center;">
+    <img src="uploads/lavadora.webp" alt="Colon + Calgon en tu lavadora" style="width:min(100%,900px); height:auto; display:block;">
+  </section>
+
+  <!-- ============ TEXTO PROMO ============ -->
+  <section style="max-width:820px; margin:24px auto 0; padding:0 24px; text-align:center;">
+    <h2 style="font-weight:800; font-style:italic; text-transform:uppercase; text-align:center; font-size:clamp(22px,6vw,42px); line-height:1.05; margin:0 0 20px; text-wrap:balance;">¡Compra Colon + Calgon y llévate hasta <span style="color:#29ABE2; -webkit-text-stroke:4px #ffffff; paint-order:stroke fill;">8,99&nbsp;€</span> de reembolso!</h2>
+    <p style="font-weight:400; font-size:clamp(15px,3.8vw,18px); line-height:1.5; color:#cfe6ff; margin:0; text-wrap:pretty;"><strong style="font-weight:800; color:#fff;">Si tu producto Calgon cuesta hasta 8,99 €, recibirás un reembolso del 100% de su importe. Si su precio es superior, obtendrás igualmente un reembolso de hasta 8,99 €.</strong> Para más información, consulta las condiciones de la promoción y las <a href="{{ bbllUrl }}" target="_blank" rel="noopener" style="font-weight:600; text-decoration:underline;">bases legales</a>.</p>
   </section>
 
   <!-- ============ PASOS ============ -->
@@ -48,23 +60,53 @@
     <div id="cc-steps-grid" style="display:grid; grid-template-columns:1fr; gap:16px;">
       <div class="cc-step" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
         <div style="width:52px; height:52px; border-radius:999px; background:#E1251B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(225,37,27,0.45);">1</div>
-        <div style="font-weight:800; text-transform:uppercase; font-size:20px; letter-spacing:0.02em;">Compra</div>
-        <div style="font-weight:400; font-size:16px; line-height:1.35; color:#cfe6ff; text-align:center;">1 detergente Colon y 1 Calgon participante.</div>
+        <div style="font-weight:800; text-transform:uppercase; font-size:26px; letter-spacing:0.02em; text-align:center;">Compra</div>
+        <div style="font-weight:400; font-size:20px; line-height:1.4; color:#cfe6ff; text-align:center;">1 detergente Colon y 1 Calgon participante.</div>
       </div>
       <div class="cc-step" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
         <div style="width:52px; height:52px; border-radius:999px; background:#E1251B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(225,37,27,0.45);">2</div>
-        <div style="font-weight:800; text-transform:uppercase; font-size:20px; letter-spacing:0.02em;">Sube tu ticket</div>
-        <div style="font-weight:400; font-size:16px; line-height:1.35; color:#cfe6ff; text-align:center;">Rellena el formulario con tus datos y la foto del ticket.</div>
+        <div style="font-weight:800; text-transform:uppercase; font-size:26px; letter-spacing:0.02em; text-align:center;">Sube tu ticket</div>
+        <div style="font-weight:400; font-size:20px; line-height:1.4; color:#cfe6ff; text-align:center;">Rellena el formulario con tus datos y la foto del ticket.</div>
       </div>
       <div class="cc-step" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
         <div style="width:52px; height:52px; border-radius:999px; background:#E1251B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(225,37,27,0.45);">3</div>
-        <div style="font-weight:800; text-transform:uppercase; font-size:20px; letter-spacing:0.02em;">Recibe tu dinero</div>
-        <div style="font-weight:400; font-size:16px; line-height:1.35; color:#cfe6ff; text-align:center;">Hasta 8,99 € del precio de tu Calgon, en tu cuenta bancaria.</div>
+        <div style="font-weight:800; text-transform:uppercase; font-size:26px; letter-spacing:0.02em; text-align:center;">Recibe tu dinero</div>
+        <div style="font-weight:400; font-size:20px; line-height:1.4; color:#cfe6ff; text-align:center;">Hasta 8,99 € del precio de tu Calgon, en tu cuenta bancaria.</div>
       </div>
     </div>
   </section>
 
   <!-- ============ PRODUCTOS PARTICIPANTES ============ -->
+  <section id="cc-productos" style="max-width:1180px; margin:64px auto 0; padding:0 20px;">
+    <h2 style="font-weight:800; font-style:italic; text-transform:uppercase; text-align:center; font-size:clamp(22px,6vw,42px); line-height:1.05; margin:0 0 32px; text-wrap:balance;">Busca el tuyo y recibe hasta <span style="color:#29ABE2; -webkit-text-stroke:4px #ffffff; paint-order:stroke fill;">8,99&nbsp;€</span> de regalo</h2>
+    <div id="cc-prods-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px;">
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/4002448003533_1.png" alt="Calgon Power Gel" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/4002448006381.png" alt="Calgon Power Pastillas" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/5201347156855_1.png" alt="Calgon Power Gel" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/8002910039455_1.png" alt="Calgon Power Pastillas" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/8410104753221_1.png" alt="Calgon Concentrated Power Polvo" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/8710552260594_1-(1).png" alt="Calgon Power Pastillas" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/P-26636-CALGON_LabelSticker-(1).png" alt="Calgon Power Gel" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+      <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
+        <img src="uploads/P-26943_CALGON_RENDER-GEL-DOYPACK-(1).png" alt="Calgon Power Gel Doypack" style="max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; display:block;">
+      </div>
+    </div>
+  </section>
+
   <!-- ============ FOOTER ============ -->
   <footer style="margin-top:72px; background:#031a3c; border-top:1px solid rgba(255,255,255,0.08);">
     <div style="max-width:760px; margin:0 auto; padding:24px 20px calc(130px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; gap:16px;">
@@ -84,11 +126,12 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;ctaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://participa.samplia.com/lacoladaperfecta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Promoción&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;ctaUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://participa.samplia.com/lacoladaperfecta&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Promoción&quot;},&quot;bbllUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://participa.samplia.com/lacoladaperfecta/bases-legales&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Promoción&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     return {
       ctaUrl: this.props.ctaUrl || 'https://participa.samplia.com/lacoladaperfecta',
+      bbllUrl: this.props.bbllUrl || 'https://participa.samplia.com/lacoladaperfecta/bases-legales',
     };
   }
 }

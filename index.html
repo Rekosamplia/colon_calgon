@@ -22,7 +22,8 @@
   a:hover { color: #ffffff; }
   @keyframes coinFloat { 0%,100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-8px) rotate(2deg); } }
   @media (max-width: 640px) {
-    #cc-hero-img { height: auto; object-fit: contain; }
+    #cc-hero-img { display: none !important; }
+    #cc-hero-img-mob { display: block !important; }
   }
   @media (max-width: 859px) {
     #cc-promo-title { font-size: clamp(34px, 9.5vw, 52px) !important; }
@@ -48,6 +49,7 @@
   <!-- ============ HERO ============ -->
   <section id="cc-hero" style="position:relative; width:100%; padding:0; margin:0; overflow:hidden;">
     <img id="cc-hero-img" src="uploads/hero_CalgonColoN-5f1dd62b.png" alt="Compra 1 detergente Colon y llévate Calgon gratis" style="width:100%; height:auto; object-fit:contain; display:block;">
+    <img id="cc-hero-img-mob" src="uploads/hero_CalgonColon_m.png" alt="Compra 1 detergente Colon y llévate Calgon gratis" style="width:100%; height:auto; object-fit:contain; display:none;">
   </section>
 
   <!-- ============ GIF LAVADORA ============ -->
@@ -65,17 +67,17 @@
   <section id="cc-pasos" style="max-width:1180px; margin:clamp(64px,9vw,120px) auto 0; padding:0 20px;">
     <h2 style="font-weight:800; font-style:italic; text-transform:uppercase; text-align:center; font-size:clamp(22px,5.2vw,42px); line-height:1.05; margin:0 auto 32px; width:100%; max-width:100%; text-wrap:balance;">Participa en <span style="color:#29ABE2; -webkit-text-stroke:4px #ffffff; paint-order:stroke fill;">3 pasos</span></h2>
     <div id="cc-steps-grid" style="display:grid; grid-template-columns:1fr; gap:16px;">
-      <div class="cc-step" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+      <div class="cc-step" style-hover="background:rgba(255,255,255,0.14); border-color:rgba(255,255,255,0.32); transform:translateY(-6px); box-shadow:0 18px 36px rgba(0,0,0,0.28)" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; transition:transform 220ms cubic-bezier(0.22,1,0.36,1), background 220ms ease, border-color 220ms ease, box-shadow 220ms ease; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
         <div style="width:52px; height:52px; border-radius:999px; background:#E1251B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(225,37,27,0.45);">1</div>
         <div style="font-weight:800; text-transform:uppercase; font-size:26px; letter-spacing:0.02em; text-align:center;">Compra</div>
         <div style="font-weight:400; font-size:20px; line-height:1.4; color:#cfe6ff; text-align:center;">1 detergente Colon y 1 Calgon participante.</div>
       </div>
-      <div class="cc-step" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+      <div class="cc-step" style-hover="background:rgba(255,255,255,0.14); border-color:rgba(255,255,255,0.32); transform:translateY(-6px); box-shadow:0 18px 36px rgba(0,0,0,0.28)" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; transition:transform 220ms cubic-bezier(0.22,1,0.36,1), background 220ms ease, border-color 220ms ease, box-shadow 220ms ease; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
         <div style="width:52px; height:52px; border-radius:999px; background:#E1251B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(225,37,27,0.45);">2</div>
         <div style="font-weight:800; text-transform:uppercase; font-size:26px; letter-spacing:0.02em; text-align:center;">Sube tu ticket</div>
         <div style="font-weight:400; font-size:20px; line-height:1.4; color:#cfe6ff; text-align:center;">Rellena el formulario con tus datos y la foto del ticket.</div>
       </div>
-      <div class="cc-step" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
+      <div class="cc-step" style-hover="background:rgba(255,255,255,0.14); border-color:rgba(255,255,255,0.32); transform:translateY(-6px); box-shadow:0 18px 36px rgba(0,0,0,0.28)" style="background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:18px; transition:transform 220ms cubic-bezier(0.22,1,0.36,1), background 220ms ease, border-color 220ms ease, box-shadow 220ms ease; padding:40px 24px 44px; min-height:300px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px;">
         <div style="width:52px; height:52px; border-radius:999px; background:#E1251B; font-weight:800; font-size:26px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(225,37,27,0.45);">3</div>
         <div style="font-weight:800; text-transform:uppercase; font-size:26px; letter-spacing:0.02em; text-align:center;">Recibe tu dinero</div>
         <div style="font-weight:400; font-size:20px; line-height:1.4; color:#cfe6ff; text-align:center;">Hasta 8,99 € del precio de tu Calgon, en tu cuenta bancaria.</div>
@@ -84,7 +86,7 @@
   </section>
 
   <!-- ============ PRODUCTOS PARTICIPANTES ============ -->
-  <section id="cc-productos" style="max-width:1180px; margin:64px auto 0; padding:0 20px;">
+  <section id="cc-productos" style="max-width:1180px; margin:clamp(64px,9vw,120px) auto 0; padding:0 20px;">
     <h2 style="font-weight:800; font-style:italic; text-transform:uppercase; text-align:center; font-size:clamp(22px,5.2vw,42px); line-height:1.05; margin:0 auto 32px; width:100%; max-width:100%; text-wrap:balance;">Busca tu producto Calgon y recibe hasta <span style="color:#29ABE2; -webkit-text-stroke:4px #ffffff; paint-order:stroke fill;">8,99&nbsp;€</span> de regalo</h2>
     <div id="cc-prods-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:14px;">
       <div style="border-radius:16px; padding:8px; display:flex; align-items:center; justify-content:center; aspect-ratio:1/1;">
